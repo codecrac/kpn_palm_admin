@@ -57,9 +57,9 @@
                                 <label class="col-md-12 p-0">Etat</label>
                                 <div class="col-md-12 border-bottom p-0">
                                     <select type="text" placeholder="0" class="form-control p-0 border-0"  required name="statut">
-                                        <option value="en_attente"> Dans la plantation </option>
+                                        <option value="en_attente"> Dans la plantation [En attente] </option>
                                         <option value="livraison_en_cours"> Livraison en cours </option>
-                                        <option value="livraison_recue"> Livraison recue </option>
+                                        <option value="livraison_effectuer"> Livraison recue </option>
                                         <option value="paiement_disponible"> Paiement disponible </option>
                                         <option value="paiement_effectuer"> Paiement effectuer </option>
                                     </select>
@@ -70,28 +70,28 @@
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Date depart</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="date" placeholder="0" class="form-control p-0 border-0" value="0"  required name="date_depart">
+                                    <input type="date" placeholder="0" class="form-control p-0 border-0" value="0"   name="date_depart">
                                 </div>
                             </div>
 
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Heure depart</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="time" placeholder="10H50" class="form-control p-0 border-0" value="0"  required name="heure_depart">
+                                    <input type="time" placeholder="10H50" class="form-control p-0 border-0" value="0"   name="heure_depart">
                                 </div>
                             </div>
 
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Date arrivée</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="date" placeholder="0" class="form-control p-0 border-0" value="0"  required name="date_arriver">
+                                    <input type="date" placeholder="0" class="form-control p-0 border-0" value="0"   name="date_arriver">
                                 </div>
                             </div>
 
                             <div class="form-group mb-4">
                                 <label class="col-md-12 p-0">Heure arrivée</label>
                                 <div class="col-md-12 border-bottom p-0">
-                                    <input type="time" placeholder="10H50" class="form-control p-0 border-0" value="0"  required name="heure_arriver">
+                                    <input type="time" placeholder="10H50" class="form-control p-0 border-0" value="0"   name="heure_arriver">
                                 </div>
                             </div>
 

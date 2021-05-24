@@ -12,10 +12,12 @@ class ProducteurController extends Controller
     public function nouveau_producteur(){
         return view('producteurs.nouveau');
     }
+
     public function liste_producteurs(){
         $les_producteurs = Producteur::all();
         return view('producteurs.liste',compact('les_producteurs'));
     }
+
     public function editer_producteur($id_producteur){
         $le_producteur = Producteur::findorfail($id_producteur);
         return view('producteurs.editer',compact('id_producteur','le_producteur'));

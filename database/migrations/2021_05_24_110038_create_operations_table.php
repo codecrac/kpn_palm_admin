@@ -15,6 +15,7 @@ class CreateOperationsTable extends Migration
     {
         Schema::create('operations', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_producteur');
             $table->string('type')->nullable();
             $table->string('titre');
             $table->string('description');
@@ -23,7 +24,7 @@ class CreateOperationsTable extends Migration
             $table->string('temps_depart')->nullable();
             $table->string('temps_arriver')->nullable();
             $table->enum('maluces',['oui','non'])->default('non');
-            $table->string('commentaire');
+            $table->string('commentaire')->nullable();
             $table->timestamps();
         });
     }

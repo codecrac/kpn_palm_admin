@@ -15,7 +15,12 @@ class CreateInformationsTable extends Migration
     {
         Schema::create('informations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('id_producteur')->default('0');
+            $table->string('type')->nullable();
+            $table->string('titre');
+            $table->string('description');
+            $table->string('timestamp');
+//            $table->timestamps();
         });
     }
 

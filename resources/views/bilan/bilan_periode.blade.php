@@ -4,7 +4,9 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
-                <h2 class="text-uppercase text-decoration-underline pb-4 pt-4 text-center">Liste des operations</h2>
+                <h2 class="text-uppercase text-decoration-underline pb-4 pt-4 text-center">
+                    BILAN DES OPERATIONS {{$nom_producteur}} : {{date('d-m-Y',strtotime($date_debut))}} à {{date('d-m-Y',strtotime($date_fin))}}
+                </h2>
                 {!! \Illuminate\Support\Facades\Session::get('notif','') !!}
                 <div class="table-responsive">
                     <table class="datatable table text-nowrap ">
@@ -15,7 +17,6 @@
                             <th class="border-top-0">Statut</th>
                             <th class="border-top-0">Date depart</th>
                             <th class="border-top-0">Date Arrive</th>
-                            <th class="border-top-0">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -31,9 +32,6 @@
                                 <td>{{$operation->temps_depart}}</td>
                                 <td>{{$operation->temps_arriver}}</td>
                                 <td>{{$operation->adresse}}</td>
-                                <td>
-                                    <a href="{{route('editer_operation',[$operation->id])}}" class="mt-2 mt-1 mb-1 btn btn-primary">Editer</a>
-                                </td>
                             </tr>
                         @endforeach
 

@@ -16,13 +16,13 @@ class CreateProducteursTable extends Migration
         Schema::create('producteurs', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('pseudo');
+            $table->string('pseudo')->unique();
             $table->string('email')->nullable();
             $table->string('telephone');
             $table->string('mot_de_passe');
             $table->string('adresse');
-            $table->integer('op_non_lu');
-            $table->integer('info_non_lu');
+            $table->integer('op_non_lu')->default('0');
+            $table->integer('info_non_lu')->default('0');
 //            $table->timestamps();
         });
     }

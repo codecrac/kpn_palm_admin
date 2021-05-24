@@ -55,7 +55,7 @@
             <nav class="sidebar-nav">
                 <ul id="sidebarnav">
                     <li class="sidebar-item pt-2">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"aria-expanded="false">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('dashboard')}}"aria-expanded="false">
                             <i class="far fa-home" aria-hidden="true"></i>
                             <span class="hide-menu">Tableau de bord</span>
                         </a>
@@ -93,10 +93,26 @@
 
 
                     <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('nouvelle_information')}}"
                            aria-expanded="false">
                             <i class="fa fa-table" aria-hidden="true"></i>
-                            <span class="hide-menu">Informations</span>
+                            <span class="hide-menu">Nouvelle Information</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('liste_informations')}}"
+                           aria-expanded="false">
+                            <i class="fa fa-table" aria-hidden="true"></i>
+                            <span class="hide-menu">Liste Informations</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('choisir_configuration_bilan')}}"
+                           aria-expanded="false">
+                            <i class="fa fa-table" aria-hidden="true"></i>
+                            <span class="hide-menu">Bilan periodique</span>
                         </a>
                     </li>
                 </ul>

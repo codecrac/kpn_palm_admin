@@ -1,5 +1,13 @@
 @extends('includes')
 
+@section('style')
+    <style>
+        th,td{
+            text-align: center;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-sm-12">
@@ -14,6 +22,7 @@
                             <th class="border-top-0">Nom complet</th>
                             <th class="border-top-0">Telephone</th>
                             <th class="border-top-0">Adrresse</th>
+                            <th class="border-top-0">Operations</th>
                             <th class="border-top-0">Action</th>
                         </tr>
                         </thead>
@@ -24,6 +33,11 @@
                                 <td>{{$producteur->nom}}</td>
                                 <td>{{$producteur->telephone}}</td>
                                 <td>{{$producteur->adresse}}</td>
+                                <td>
+                                    <a href="{{route('operation_producteur',[$producteur->id])}}" style="padding: 5px 10px;background-color: #0c4128;color: #fff">
+                                        {{sizeof($producteur->operations)}}
+                                    </a>
+                                </td>
                                 <td>
                                     <a href="{{route('editer_producteur',[$producteur->id])}}" class="mt-2 mt-1 mb-1 btn btn-primary">Editer</a>
                                 </td>
