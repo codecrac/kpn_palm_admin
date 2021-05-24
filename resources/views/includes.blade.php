@@ -14,7 +14,7 @@
         <title>KPN PALM</title>
         <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
         <!-- Favicon icon -->
-        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('template/plugins/images/favicon.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/icone_palmier.png')}}">
         <!-- Custom CSS -->
         <link href="{{asset('template/plugins/bower_components/chartist/dist/chartist.min.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="{{asset('template/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}">
@@ -151,9 +151,7 @@
 
         <!-- footer -->
         <!-- ============================================================== -->
-        <footer class="footer text-center"> 2021 © yves_and_michael - Droits Sous Licence <a
-                href="https://devs.matradition.ci/">Voir le site web</a>
-        </footer>
+        <footer class="footer text-center"> KPN VISA - TOUT DROITS RESERVES</footer>
         <!-- ============================================================== -->
         <!-- End footer -->
         <!-- ============================================================== -->
@@ -189,14 +187,14 @@
 {{--<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>--}}
 <script src="{{asset('js/datatable.min.js')}}"></script>
 <script type="application/javascript">
-/*    $( document ).ready(function() {
-        fermer_tous_les_garde_fou();
+    $( document ).ready(function() {
+        // fermer_tous_les_garde_fou();
         $('.datatable').DataTable();
 
         $('.searchable-select').selectize({
             sortField: 'text'
         });
-    });*/
+    });
 </script>
 <script src="{{asset('js/selectize.min.js')}}"></script>
 <script src="{{asset('js/mes_fonctions.js')}}"></script>

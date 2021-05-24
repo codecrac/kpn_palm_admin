@@ -19,7 +19,7 @@
             <div class="white-box">
                 <h2 class="text-uppercase text-decoration-underline pb-4 pt-4 text-center">Configuration du bilan</h2>
                 <br/>
-                <form method="post" action="{{route('bilan_periodique')}}">
+                <form method="post" target="_blank" action="{{route('bilan_periodique')}}">
                     <div class="row">
                         <div class="form-group mb-6">
                             Bilan Operation de :
@@ -47,7 +47,9 @@
 
                     <div class="col-sm-12 text-center">
                         @csrf
-                        <button class="btn btn-success">Enregistrer</button>
+                        <button type="submit" name="voir_bilan" value="voir_bilan" class="btn btn-warning">Voir le bilan</button>
+                        <br/><br/>
+                        <button type="submit" name="imprimer_bilan" value="imprimer_bilan" class="btn btn-success">Imprimer le bilan</button>
                     </div>
                 </form>
             </div>

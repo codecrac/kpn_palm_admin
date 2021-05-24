@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Operation;
 use App\Models\Producteur;
+use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 
 class BilanController extends Controller
@@ -16,6 +17,7 @@ class BilanController extends Controller
 
     public function bilan_periodique(Request $request){
         $df = $request->all();
+//        dd($df,isset($df['voir_bilan']));
         $id_producteur = $df['id_producteur'];
         $date_debut = $df['date_debut'];
         $date_fin = $df['date_fin'];
@@ -28,8 +30,23 @@ class BilanController extends Controller
             $le_producteur = Producteur::findorfail($id_producteur);
             $nom_producteur = "de ". $le_producteur->nom;
         }
-//        dd($les_operations);
-        return view('bilan.bilan_periode',compact('les_operations','date_debut','date_fin','nom_producteur'));
 
+        if(isset($df['voir_bilan'])) {
+            return view('bilan.bilan_periode', compact('les_operations', 'date_debut', 'date_fin', 'nom_producteur'));
+        }else{
+            $domPdf = new Dompdf();
+            $domPdf->loadHtml(view('bilan.bilan_periode_pdf',compact('les_operations','date_debut','date_fin','nom_producteur')));
+
+            $domPdf->setPaper('A4');
+
+            //convertir en pdf
+            $domPdf->render();
+
+            //afficher le pdf
+            $nom_facture = 'Bilan-'.$date_debut.'-'.$date_fin.'.pdf';
+            $domPdf->stream($nom_facture,['Attachment'=>false]);
+
+
+        }
     }
 }

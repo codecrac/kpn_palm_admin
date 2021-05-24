@@ -9,7 +9,7 @@
                 </h2>
                 {!! \Illuminate\Support\Facades\Session::get('notif','') !!}
                 <div class="table-responsive">
-                    <table class="datatable table text-nowrap ">
+                    <table class="datatable table ">
                         <thead>
                         <tr>
                             <th class="border-top-0">Reference</th>
@@ -23,7 +23,11 @@
                         @foreach($les_operations as $operation)
                             <tr>
                                 <td>{{$operation->titre}}</td>
-                                <td>{{$operation->producteur->nom}}</td>
+                                <td>
+                                    {{$operation->producteur->nom}}
+                                    <br/>
+                                    Tel :  {{$operation->producteur->telephone}}
+                                </td>
                                 <td class="text-uppercase">
                                     <span style="padding: 4px;background-color: #2d3748;color: #fff;min-width: 120px">
                                         {{str_replace('_',' ',$operation->statut)}}
@@ -31,7 +35,6 @@
                                 </td>
                                 <td>{{$operation->temps_depart}}</td>
                                 <td>{{$operation->temps_arriver}}</td>
-                                <td>{{$operation->adresse}}</td>
                             </tr>
                         @endforeach
 
@@ -42,4 +45,3 @@
         </div>
     </div>
 @endsection
-
