@@ -24,6 +24,15 @@ class CreateUsersTable extends Migration
             $table->text('profile_photo_path')->nullable();
             $table->timestamps();
         });
+
+        // Insert some stuff
+        DB::table('users')->insert(
+            array(
+                'name' => 'admin',
+                'email' => 'admin@gmail.com',
+                'password' => bcrypt('admin@gmail.com'),
+            )
+        );
     }
 
     /**

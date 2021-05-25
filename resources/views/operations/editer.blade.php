@@ -57,7 +57,7 @@
                                 <label class="col-md-12 p-0">Etat</label>
                                 <div class="col-md-12 border-bottom p-0">
                                     <select type="text" placeholder="0" class="form-control p-0 border-0"  required name="statut">
-                                        <option value="{{$loperation->statut}}"> {{$loperation->statut}} </option>
+                                        <option value="{{$loperation->statut}}" style="text-transform: uppercase">{{str_replace('_',' ',$loperation->statut)}} </option>
                                         <option value="en_attente"> Dans la plantation </option>
                                         <option value="livraison_en_cours"> Livraison en cours </option>
                                         <option value="livraison_effectuer"> Livraison recue </option>

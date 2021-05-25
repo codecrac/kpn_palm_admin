@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producteur;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ProducteurController extends Controller
 {
@@ -11,6 +12,21 @@ class ProducteurController extends Controller
     #=========FRONT
     public function nouveau_producteur(){
         return view('producteurs.nouveau');
+    }
+
+    public function connexion_producteur(Request $request){
+        $df = $request->all();
+        $pseudo=$df['pseudo'];
+        $mot_de_passe=$df['mot_de_passe'];
+        $le_producteur = Producteur::where('pseudo','=',$pseudo)->where('mot_de_passe','=',$mot_de_passe)->get();
+
+        if(sizeof($le_producteur) >0){
+            return redirect()->route('dashboard',[$le_producteur[0]->id]);
+//            view('dashboard',compact('le_producteur'));
+        }else{
+            $notif = "<div style='background-color: #aa3333;color: #fff; text-align: center'> Identifiant incorrects </div>";
+            return redirect()->back()->with('notif',$notif);
+        }
     }
 
     public function liste_producteurs(){

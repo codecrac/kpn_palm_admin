@@ -59,6 +59,10 @@
                         @csrf
                         <button class="btn btn-success">Enregistrer</button>
                     </div>
+
+                    @if( ! \Illuminate\Support\Facades\Auth::check())
+                        <a href="#">J'ai créé mon compte, Se connecter</a>
+                    @endif
                 </div>
 
             </div>

@@ -26,7 +26,9 @@
                             <th class="border-top-0">Titre</th>
                             <th class="border-top-0">Description</th>
                             <th class="border-top-0">Date</th>
-                            <th class="border-top-0">Action</th>
+                            @if(\Illuminate\Support\Facades\Auth::check())
+                                <th class="border-top-0">Action</th>
+                            @endif
                         </tr>
                         </thead>
                         <tbody>
@@ -35,7 +37,8 @@
                                 <td>{{$information->titre}}</td>
                                 <td> {{$information->description}} </td>
                                 <td> {{date('d-m-Y',strtotime($information->timestamp))}} </td>
-                                <td>
+                                @if(\Illuminate\Support\Facades\Auth::check())
+                                    <td>
                                     <button type="button" class="btn btn-danger text-white" data-bs-toggle="modal" data-bs-target="#modalSuppression_{{$information->id}}">
                                         Supprimer
                                     </button>
@@ -70,6 +73,7 @@
                                     </div>
 
                                 </td>
+                                @endif
 
                             </tr>
                         @endforeach

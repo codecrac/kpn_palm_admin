@@ -30,7 +30,7 @@
         <br/><br/>
         <div class="col-lg-4 col-md-12">
             <div class="white-box analytics-info">
-                <a href="{{route('liste_operations',['en_attente'])}}">
+                <a href="{{route('liste_operations',['en_attente',$id_producteur])}}">
                     <h3 class="box-title"> Productions dans les champs</h3>
                 </a>
                 <ul class="list-inline two-part d-flex align-items-center mb-0">
@@ -43,7 +43,7 @@
 
         <div class="col-lg-4 col-md-12">
             <div class="white-box analytics-info">
-                <a href="{{route('liste_operations',['livraison_en_cours'])}}">
+                <a href="{{route('liste_operations',['livraison_en_cours',$id_producteur])}}">
                     <h3 class="box-title text-uppercase"> Livraisons en cours </h3>
                 </a>
                 <ul class="list-inline two-part d-flex align-items-center mb-0">
@@ -56,7 +56,7 @@
 
         <div class="col-lg-4 col-md-12">
             <div class="white-box analytics-info">
-                <a href="{{route('liste_operations',['livraison_effectuer'])}}">
+                <a href="{{route('liste_operations',['livraison_effectuer',$id_producteur])}}">
                     <h3 class="box-title text-uppercase"> Livraisons recues </h3>
                 </a>
                 <ul class="list-inline two-part d-flex align-items-center mb-0">
@@ -76,7 +76,7 @@
 
         <div class="col-lg-4 col-md-12">
             <div class="white-box analytics-info">
-                <a href="{{route('liste_operations',['maluces'])}}">
+                <a href="{{route('liste_operations',['maluces',$id_producteur])}}">
                     <h3 class="box-title  text-uppercase">Maluces <br/>.</h3>
                 </a>
                 <ul class="list-inline two-part d-flex align-items-center mb-0">
@@ -89,7 +89,7 @@
 
         <div class="col-lg-4 col-md-12">
             <div class="white-box analytics-info">
-                <a href="{{route('liste_operations',['paiement_disponible'])}}">
+                <a href="{{route('liste_operations',['paiement_disponible',$id_producteur])}}">
                     <h3 class="box-title  text-uppercase">Paiement disponibles<br/>.</h3>
                 </a>
                 <ul class="list-inline two-part d-flex align-items-center mb-0">
@@ -102,7 +102,7 @@
 
         <div class="col-lg-4 col-md-12">
             <div class="white-box analytics-info">
-                <a href="{{route('liste_operations',['paiement_effectuer'])}}">
+                <a href="{{route('liste_operations',['paiement_effectuer',$id_producteur])}}">
                     <h3 class="box-title text-uppercase">Paiements effectuer <br/>.</h3>
                 </a>
                 <ul class="list-inline two-part d-flex align-items-center mb-0">

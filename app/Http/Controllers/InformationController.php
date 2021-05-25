@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Information;
+use App\Models\Producteur;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class InformationController extends Controller
 {
@@ -11,9 +14,21 @@ class InformationController extends Controller
         return view('informations.nouveau');
     }
 
-    public function liste_informations(){
-        $les_informations = Information::all();
-        return view('informations.liste',compact('les_informations'));
+    public function liste_informations($id_producteur=null){
+        $les_informations = Information::orderBy('id','DESC')->get();
+
+        $nb_info_non_lu =0;
+        if($id_producteur!=null){
+            $le_producteur= Producteur::findorfail($id_producteur);
+            $le_producteur->info_non_lu = 0;
+            $le_producteur->save();
+
+
+            $le_producteur = \App\Models\Producteur::findorfail($id_producteur);
+            $nb_info_non_lu = $le_producteur->info_non_lu;
+        }
+
+        return view('informations.liste',compact('les_informations','id_producteur','nb_info_non_lu'));
     }
 
 
@@ -29,6 +44,11 @@ class InformationController extends Controller
         if($linformation->save()){
             $notif = "<div class='alert alert-success text-center'> Operation effectuée avec succès </div>";
         }
+
+        Producteur::where('op_non_lu','=','0')
+            ->update([
+                'info_non_lu'=> DB::raw('info_non_lu+1')
+            ]);
         return redirect()->back()->with('notif',$notif);
     }
 
@@ -39,7 +59,7 @@ class InformationController extends Controller
         if($linformation->delete()){
             $notif = "<div class='alert alert-success text-center'> Operation effectuée avec succès </div>";
         }
-        return redirect()->route('liste_operations')->with('notif',$notif);
+        return redirect()->route('liste_informations')->with('notif',$notif);
     }
 
 }

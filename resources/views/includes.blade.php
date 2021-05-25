@@ -44,98 +44,137 @@
 <!-- ============================================================== -->
 <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
      data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Left Sidebar - style you can find in sidebar.scss  -->
-    <!-- ============================================================== -->
-    <aside class="left-sidebar" data-sidebarbg="skin6">
-        <!-- Sidebar scroll-->
-        <div class="scroll-sidebar">
-            <!-- Sidebar navigation-->
-            <nav class="sidebar-nav">
-                <ul id="sidebarnav">
-                    <li class="sidebar-item pt-2">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('dashboard')}}"aria-expanded="false">
-                            <i class="far fa-home" aria-hidden="true"></i>
-                            <span class="hide-menu">Tableau de bord</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item pt-2">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('nouveau_producteur')}}" aria-expanded="false">
-                            <i class="far fa-clock" aria-hidden="true"></i>
-                            <span class="hide-menu">Nouveau producteurs</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('liste_producteurs')}}"
-                           aria-expanded="false">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-                            <span class="hide-menu">Liste des producteurs</span>
-                        </a>
-                    </li>
+
+    @if(\Illuminate\Support\Facades\Auth::check())
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('dashboard')}}"aria-expanded="false">
+                                <i class="far fa-home" aria-hidden="true"></i>
+                                <span class="hide-menu">Tableau de bord</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('nouveau_producteur')}}" aria-expanded="false">
+                                <i class="far fa-clock" aria-hidden="true"></i>
+                                <span class="hide-menu">Nouveau producteurs</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('liste_producteurs')}}"
+                               aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu">Liste des producteurs</span>
+                            </a>
+                        </li>
 
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('nouvelle_operation')}}"
-                           aria-expanded="false">
-                            <i class="fa fa-font" aria-hidden="true"></i>
-                            <span class="hide-menu">Nouvelle operation</span>
-                        </a>
-                    </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('nouvelle_operation')}}"
+                               aria-expanded="false">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                                <span class="hide-menu">Nouvelle operation</span>
+                            </a>
+                        </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('liste_operations')}}"
-                           aria-expanded="false">
-                            <i class="fa fa-font" aria-hidden="true"></i>
-                            <span class="hide-menu">Liste des operations</span>
-                        </a>
-                    </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('liste_operations')}}"
+                               aria-expanded="false">
+                                <i class="fa fa-font" aria-hidden="true"></i>
+                                <span class="hide-menu">Liste des operations</span>
+                            </a>
+                        </li>
 
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('nouvelle_information')}}"
-                           aria-expanded="false">
-                            <i class="fa fa-table" aria-hidden="true"></i>
-                            <span class="hide-menu">Nouvelle Information</span>
-                        </a>
-                    </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('nouvelle_information')}}"
+                               aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Nouvelle Information</span>
+                            </a>
+                        </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('liste_informations')}}"
-                           aria-expanded="false">
-                            <i class="fa fa-table" aria-hidden="true"></i>
-                            <span class="hide-menu">Liste Informations</span>
-                        </a>
-                    </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('liste_informations')}}"
+                               aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Liste Informations</span>
+                            </a>
+                        </li>
 
-                    <li class="sidebar-item">
-                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('choisir_configuration_bilan')}}"
-                           aria-expanded="false">
-                            <i class="fa fa-table" aria-hidden="true"></i>
-                            <span class="hide-menu">Bilan periodique</span>
-                        </a>
-                    </li>
-                </ul>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('choisir_configuration_bilan')}}"
+                               aria-expanded="false">
+                                <i class="fa fa-table" aria-hidden="true"></i>
+                                <span class="hide-menu">Bilan periodique</span>
+                            </a>
+                        </li>
+                    </ul>
 
-            </nav>
-            <!-- End Sidebar navigation -->
-        </div>
-        <!-- End Sidebar scroll-->
-    </aside>
-    <!-- ============================================================== -->
-    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Page wrapper  -->
-    <!-- ============================================================== -->
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+    @else
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <li class="sidebar-item pt-2">
+                            <a style="border:1px solid gray " class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('dashboard',[$id_producteur])}}"aria-expanded="false">
+                                <i class="far fa-home" aria-hidden="true"></i>
+                                <span class="hide-menu">Tableau de bord</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item pt-2">
+                            <a style="border:1px solid gray " class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('nouvelle_operation',[$id_producteur])}}"aria-expanded="false">
+                                <i class="far fa-home" aria-hidden="true"></i>
+                                <span class="hide-menu">Commencer une livraison</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item pt-2">
+                            <a style="border:1px solid gray " class="sidebar-link waves-effect waves-dark sidebar-link"
+                               href="{{route('liste_informations',[$id_producteur])}}" aria-expanded="false">
+                                <i class="far fa-home" aria-hidden="true"></i>
+                                <span class="hide-menu">informations
+                                    @isset($nb_info_non_lu) <i style="padding: 5px; background-color: #0c4128;color: #fff">  {{$nb_info_non_lu}} </i> @endisset
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item pt-2">
+                            <a style="border:1px solid gray " class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('welcome')}}"aria-expanded="false">
+                                <i class="far fa-home" aria-hidden="true"></i>
+                                <span class="hide-menu">Deconnexion</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+    @endif
+
     <div class="page-wrapper">
         <x-app-layout>
             <x-slot name="header">
-                <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                    @isset($titre)
-                        {{ "KPN PALM" }}
-                    @endisset
-                </h2>
+                @isset($id_producteur)
+                <a href="{{route('dashboard',[$id_producteur])}}">
+                @else
+                    <a href="{{route('dashboard')}}">
+                @endisset
+                    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                        {{ "Tableau de bord" }}
+                    </h2>
+                </a>
             </x-slot>
         <!-- ============================================================== -->
         <!-- Container fluid  -->
@@ -156,13 +195,7 @@
         <!-- End footer -->
         <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Page wrapper  -->
-    <!-- ============================================================== -->
 </div>
-<!-- ============================================================== -->
-<!-- End Wrapper -->
-<!-- ============================================================== -->
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
@@ -188,7 +221,7 @@
 <script src="{{asset('js/datatable.min.js')}}"></script>
 <script type="application/javascript">
     $( document ).ready(function() {
-        // fermer_tous_les_garde_fou();
+        fermer_tous_les_garde_fou();
         $('.datatable').DataTable();
 
         $('.searchable-select').selectize({

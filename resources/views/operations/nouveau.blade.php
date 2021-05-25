@@ -12,16 +12,21 @@
                     <h3 class="text-uppercase text-decoration-underline pb-4 pt-4">Producteur</h3>
 
                     <div class="form-group mb-4">
-                        <label class="col-sm-12">Choisissez le producteur<i class="text-danger">*</i></label>
+                        <label class="col-sm-12">Producteur<i class="text-danger">*</i></label>
                         <div class="col-sm-12 border-bottom">
-                            <select class="form-select shadow-none p-0 border-0 form-control-line searchable-select" name="id_producteur">
-                                <option value>Choissisez le producteur</option>
-                                @foreach($les_producteurs as $item_producteur)
-                                    <option value="{{$item_producteur->id}}"> {{$item_producteur->nom}} </option>
-                                @endforeach
+                            <select class="form-select shadow-none p-0 border-0 form-control-line searchable-select" name="id_producteur" required>
+                                @if($id_producteur==null)
+                                    <option value>Choissisez le producteur</option>
+                                    @foreach($les_producteurs as $item_producteur)
+                                        <option value="{{$item_producteur->id}}"> {{$item_producteur->nom}} </option>
+                                    @endforeach
+
+                                    <br/>
+                                    <a href="{{asset("nouveau_producteur")}}"> Nouveau producteur ? / je ne trouve pas le producteur</a>
+                                @else
+                                    <option value="{{$les_producteurs->id}}">{{$les_producteurs->nom}}</option>
+                                @endif
                             </select>
-                            <br/>
-                            <a href="{{asset("nouveau_producteur")}}"> Nouveau producteur ? / je ne trouve pas le producteur</a>
                         </div>
                     </div>
                 </div>
