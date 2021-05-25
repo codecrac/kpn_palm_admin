@@ -11,7 +11,8 @@ class ProducteurController extends Controller
 
     #=========FRONT
     public function nouveau_producteur(){
-        return view('producteurs.nouveau');
+        $no_menu = '';
+        return view('producteurs.nouveau',compact('no_menu'));
     }
 
     public function connexion_producteur(Request $request){

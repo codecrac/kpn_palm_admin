@@ -121,7 +121,9 @@
             <!-- End Sidebar scroll-->
         </aside>
     @else
-        <aside class="left-sidebar" data-sidebarbg="skin6">
+        @isset($no_menu)
+        @else
+            <aside class="left-sidebar" data-sidebarbg="skin6">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
@@ -161,6 +163,7 @@
             </div>
             <!-- End Sidebar scroll-->
         </aside>
+        @endisset
     @endif
 
     <div class="page-wrapper">

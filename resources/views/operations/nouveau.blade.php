@@ -1,5 +1,15 @@
 @extends('includes')
 
+@section('style')
+    @if(!\Illuminate\Support\Facades\Auth::check())
+        <style>
+            .reserver{
+                display: none !important;
+            }
+        </style>
+    @endif
+@endsection
+
 @section('content')
 
     <div class="container-fluid">
@@ -51,8 +61,8 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mb-4">
-                                <label class="col-md-12 p-0">Cash (FCFA)</label>
+                            <div class="form-group mb-4 reserver">
+                                <label class="col-md-12 p-0 ">Cash (FCFA)</label>
                                 <div class="col-md-12 border-bottom p-0">
                                     <input type="number" placeholder="0" class="form-control p-0 border-0" value="0"  required name="cash">
                                 </div>
@@ -64,9 +74,11 @@
                                     <select type="text" placeholder="0" class="form-control p-0 border-0"  required name="statut">
                                         <option value="en_attente"> Dans la plantation [En attente] </option>
                                         <option value="livraison_en_cours"> Livraison en cours </option>
-                                        <option value="livraison_effectuer"> Livraison recue </option>
-                                        <option value="paiement_disponible"> Paiement disponible </option>
-                                        <option value="paiement_effectuer"> Paiement effectuer </option>
+                                        @if(\Illuminate\Support\Facades\Auth::check())
+                                            <option value="livraison_effectuer"> Livraison recue </option>
+                                            <option value="paiement_disponible"> Paiement disponible </option>
+                                            <option value="paiement_effectuer"> Paiement effectuer </option>
+                                        @endif
                                     </select>
                                 </div>
                             </div>
@@ -86,21 +98,22 @@
                                 </div>
                             </div>
 
-                            <div class="form-group mb-4">
+
+                            <div class="form-group mb-4 reserver">
                                 <label class="col-md-12 p-0">Date arrivée</label>
                                 <div class="col-md-12 border-bottom p-0">
                                     <input type="date" placeholder="0" class="form-control p-0 border-0" value="0"   name="date_arriver">
                                 </div>
                             </div>
 
-                            <div class="form-group mb-4">
+                            <div class="form-group mb-4 reserver">
                                 <label class="col-md-12 p-0">Heure arrivée</label>
                                 <div class="col-md-12 border-bottom p-0">
                                     <input type="time" placeholder="10H50" class="form-control p-0 border-0" value="0"   name="heure_arriver">
                                 </div>
                             </div>
 
-                            <div class="form-group mb-4">
+                            <div class="form-group mb-4 reserver">
                                 <label class="col-md-12 p-0">Maluces</label>
                                 <div class="col-md-12 border-bottom p-0">
                                     <select type="text" placeholder="0" class="form-control p-0 border-0" name="maluce">
@@ -111,7 +124,7 @@
                             </div>
 
 
-                            <div class="form-group mb-4">
+                            <div class="form-group mb-4 reserver">
                                 <label class="col-md-12 p-0">Commentaire</label>
                                 <div class="col-md-12 border-bottom p-0">
                                     <textarea rows="5" class="form-control p-0 border" placeholder="" name="commentaire" ></textarea>
